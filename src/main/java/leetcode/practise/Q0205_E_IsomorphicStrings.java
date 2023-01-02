@@ -1,18 +1,16 @@
 package leetcode.practise;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * @author Vivek
  * @since 24/10/22
  */
-public class Q205_E_Isomorphic_Strings {
+public class Q0205_E_IsomorphicStrings {
 
     public static void main(String[] args) {
-        Q205_E_Isomorphic_Strings obj = new Q205_E_Isomorphic_Strings();
+        Q0205_E_IsomorphicStrings obj = new Q0205_E_IsomorphicStrings();
         System.out.println(obj.isIsomorphic("badc", "baba"));
         System.out.println(obj.isIsomorphic("egg", "add"));
     }

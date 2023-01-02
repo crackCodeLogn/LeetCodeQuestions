@@ -1,10 +1,6 @@
 package leetcode.practise;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,13 +11,13 @@ import java.util.Map;
  * INC
  * @since 23/10/22
  */
-public class Q17_M_Letter_Combinations_Phone_Number {
+public class Q0017_M_LetterCombinationsPhoneNumber {
 
     private final Map<Character, List<Character>> map = new HashMap<>();
     private final List<String> overall = new ArrayList<>();
 
     public static void main(String[] args) {
-        Q17_M_Letter_Combinations_Phone_Number object = new Q17_M_Letter_Combinations_Phone_Number();
+        Q0017_M_LetterCombinationsPhoneNumber object = new Q0017_M_LetterCombinationsPhoneNumber();
         object.init();
         System.out.println(object.map);
         System.out.println(object.letterCombinations("23"));

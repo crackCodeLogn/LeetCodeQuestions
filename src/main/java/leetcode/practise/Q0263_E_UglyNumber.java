@@ -4,10 +4,10 @@ package leetcode.practise;
  * @author Vivek
  * @since 24/10/22
  */
-public class Q263_E_Ugly_Number {
+public class Q0263_E_UglyNumber {
 
     public static void main(String[] args) {
-        Q263_E_Ugly_Number obj = new Q263_E_Ugly_Number();
+        Q0263_E_UglyNumber obj = new Q0263_E_UglyNumber();
         System.out.println(obj.isUgly(6));
     }
 

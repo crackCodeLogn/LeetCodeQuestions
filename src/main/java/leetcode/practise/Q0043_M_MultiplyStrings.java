@@ -7,10 +7,10 @@ import java.util.List;
  * @author Vivek
  * @since 2023-01-02
  */
-public class Q43_M_MultiplyStrings {
+public class Q0043_M_MultiplyStrings {
 
     public static void main(String[] args) {
-        Q43_M_MultiplyStrings q43MMultiplyStrings = new Q43_M_MultiplyStrings();
+        Q0043_M_MultiplyStrings q43MMultiplyStrings = new Q0043_M_MultiplyStrings();
         System.out.println(q43MMultiplyStrings.multiply("123", "456"));
         System.out.println(q43MMultiplyStrings.multiply("9", "9"));
         System.out.println(q43MMultiplyStrings.multiply("9133", "0"));

@@ -4,10 +4,10 @@ package leetcode.practise;
  * @author Vivek
  * @since 25/10/22
  */
-public class Q1662_E_Check_If_Two_Strings_Equivalent {
+public class Q1662_E_CheckIfTwoStringsEquivalent {
 
     public static void main(String[] args) {
-        Q1662_E_Check_If_Two_Strings_Equivalent obj = new Q1662_E_Check_If_Two_Strings_Equivalent();
+        Q1662_E_CheckIfTwoStringsEquivalent obj = new Q1662_E_CheckIfTwoStringsEquivalent();
         System.out.println(obj.arrayStringsAreEqual(new String[]{"ab", "c"}, new String[]{"a", "bcd"}));
     }
 

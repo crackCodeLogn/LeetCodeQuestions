@@ -6,10 +6,10 @@ import java.util.Arrays;
  * @author Vivek
  * @since 24/10/22
  */
-public class Q204_M_Count_Primes {
+public class Q0204_M_CountPrimes {
 
     public static void main(String[] args) {
-        Q204_M_Count_Primes object = new Q204_M_Count_Primes();
+        Q0204_M_CountPrimes object = new Q0204_M_CountPrimes();
         System.out.println(object.countPrimes(2));
     }
 

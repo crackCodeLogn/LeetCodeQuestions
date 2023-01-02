@@ -9,10 +9,10 @@ import java.util.Set;
  * @author Vivek
  * @since 2023-01-02
  */
-public class Q290_E_WordPattern {
+public class Q1290_E_WordPattern {
 
     public static void main(String[] args) {
-        Q290_E_WordPattern q290EWordPattern = new Q290_E_WordPattern();
+        Q1290_E_WordPattern q290EWordPattern = new Q1290_E_WordPattern();
         System.out.println(q290EWordPattern.wordPattern("abba", "dog cat cat dog"));
         System.out.println(q290EWordPattern.wordPattern("abba", "dog cat cat fish"));
         System.out.println(q290EWordPattern.wordPattern("aaaa", "dog cat cat dog"));

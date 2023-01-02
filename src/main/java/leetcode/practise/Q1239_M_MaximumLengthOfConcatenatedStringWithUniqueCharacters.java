@@ -9,10 +9,10 @@ import java.util.List;
  * @since 24/10/22
  * WA
  */
-public class Q1239_M_Maximum_Length_Of_Concatenated_String_With_Unique_Characters {
+public class Q1239_M_MaximumLengthOfConcatenatedStringWithUniqueCharacters {
 
     public static void main(String[] args) {
-        Q1239_M_Maximum_Length_Of_Concatenated_String_With_Unique_Characters obj = new Q1239_M_Maximum_Length_Of_Concatenated_String_With_Unique_Characters();
+        Q1239_M_MaximumLengthOfConcatenatedStringWithUniqueCharacters obj = new Q1239_M_MaximumLengthOfConcatenatedStringWithUniqueCharacters();
         String[] data = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"};
         System.out.println(obj.maxLength(Arrays.asList(data))); //wa - output should be 16 and not 2.
     }

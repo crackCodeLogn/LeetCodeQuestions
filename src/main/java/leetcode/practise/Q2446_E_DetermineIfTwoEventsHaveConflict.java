@@ -4,10 +4,10 @@ package leetcode.practise;
  * @author Vivek
  * @since 25/10/22
  */
-public class Q2446_E_Determine_If_Two_Events_Have_Conflict {
+public class Q2446_E_DetermineIfTwoEventsHaveConflict {
 
     public static void main(String[] args) {
-        Q2446_E_Determine_If_Two_Events_Have_Conflict obj = new Q2446_E_Determine_If_Two_Events_Have_Conflict();
+        Q2446_E_DetermineIfTwoEventsHaveConflict obj = new Q2446_E_DetermineIfTwoEventsHaveConflict();
         System.out.println(obj.haveConflict(new String[]{"10:00", "11:00"}, new String[]{"14:00", "15:00"}));
     }
 

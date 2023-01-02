@@ -6,10 +6,10 @@ import java.util.Stack;
  * @author Vivek
  * @since 16/10/22
  */
-public class Q20_E_ValidParanthesis {
+public class Q0020_E_ValidParanthesis {
 
     public static void main(String[] args) {
-        Q20_E_ValidParanthesis object = new Q20_E_ValidParanthesis();
+        Q0020_E_ValidParanthesis object = new Q0020_E_ValidParanthesis();
         System.out.println(object.isValid("()"));
         System.out.println(object.isValid("(]"));
     }

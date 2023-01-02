@@ -7,10 +7,10 @@ import java.util.List;
  * @author Vivek
  * @since 2023-01-02
  */
-public class Q42_H_TrappingRainWater {
+public class Q0042_H_TrappingRainWater {
 
     public static void main(String[] args) {
-        Q42_H_TrappingRainWater q42HTrappingRainWater = new Q42_H_TrappingRainWater();
+        Q0042_H_TrappingRainWater q42HTrappingRainWater = new Q0042_H_TrappingRainWater();
         System.out.println(q42HTrappingRainWater.trap(new int[]{
                 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1
         }));

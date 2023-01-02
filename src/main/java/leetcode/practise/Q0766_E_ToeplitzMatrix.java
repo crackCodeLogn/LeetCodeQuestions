@@ -4,7 +4,7 @@ package leetcode.practise;
  * @author Vivek
  * @since 31/10/22
  */
-public class Q766_E_Toeplitz_Matrix {
+public class Q0766_E_ToeplitzMatrix {
 
     public boolean isToeplitzMatrix(int[][] matrix) {
         int m = matrix.length;

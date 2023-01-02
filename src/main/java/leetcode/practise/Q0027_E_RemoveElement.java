@@ -4,10 +4,10 @@ package leetcode.practise;
  * @author Vivek
  * @since 24/10/22
  */
-public class Q27_E_Remove_Element {
+public class Q0027_E_RemoveElement {
 
     public static void main(String[] args) {
-        Q27_E_Remove_Element object = new Q27_E_Remove_Element();
+        Q0027_E_RemoveElement object = new Q0027_E_RemoveElement();
         int[] nums = {0, 1, 2, 2, 3, 0, 4, 2};
         System.out.println(object.removeElement(nums, 2));
     }

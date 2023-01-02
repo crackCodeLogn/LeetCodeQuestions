@@ -4,7 +4,7 @@ package leetcode.practise;
  * @author Vivek
  * @since 16/10/22
  */
-public class Q21_E_Merge_Two_Sorted_Lists {
+public class Q0021_E_MergeTwoSortedLists {
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode result = new ListNode(), header = result;

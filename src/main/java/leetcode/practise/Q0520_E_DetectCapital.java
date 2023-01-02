@@ -4,9 +4,9 @@ package leetcode.practise;
  * @author Vivek
  * @since 2023-01-02
  */
-public class Q520_E_DetectCapital {
+public class Q0520_E_DetectCapital {
     public static void main(String[] args) {
-        Q520_E_DetectCapital q520EDetectCapital = new Q520_E_DetectCapital();
+        Q0520_E_DetectCapital q520EDetectCapital = new Q0520_E_DetectCapital();
         System.out.println(q520EDetectCapital.detectCapitalUse("g"));
         System.out.println(q520EDetectCapital.detectCapitalUse("mL"));
         System.out.println(q520EDetectCapital.detectCapitalUse("GOOG"));
@@ -22,6 +22,6 @@ public class Q520_E_DetectCapital {
                 caps++;
             }
         }
-        return firstChar ? (caps == 0 ? true : caps == word.length() - 1) : (caps == 0);
+        return firstChar ? (caps == 0 || caps == word.length() - 1) : (caps == 0);
     }
 }

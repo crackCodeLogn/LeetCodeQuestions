@@ -7,14 +7,14 @@ import java.util.Map;
  * @author Vivek
  * @since 22/10/22
  */
-public class Q12_M_Integer_To_Roman {
+public class Q0012_M_IntegerToRoman {
 
     private final Map<Integer, String> integerToRomanEquivalent = new HashMap<>();
     private final int[] VALUES = {1, 5, 10, 50, 100, 500, 1000};
     private final String[] SYMBOLS = {"I", "V", "X", "L", "C", "D", "M"};
 
     public static void main(String[] args) {
-        Q12_M_Integer_To_Roman object = new Q12_M_Integer_To_Roman();
+        Q0012_M_IntegerToRoman object = new Q0012_M_IntegerToRoman();
         object.mapInit();
         for (int i = 1; i <= 1001; i++)
             System.out.println(i + " " + object.intToRoman(i));

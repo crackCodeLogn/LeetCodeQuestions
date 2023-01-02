@@ -6,16 +6,17 @@ import java.util.Arrays;
  * @author Vivek
  * @since 31/10/22
  */
-public class Q66_E_Plus_One {
+public class Q0066_E_PlusOne {
 
     public static void main(String[] args) {
-        Q66_E_Plus_One obj = new Q66_E_Plus_One();
+        Q0066_E_PlusOne obj = new Q0066_E_PlusOne();
         Arrays.stream(obj.plusOne(new int[]{1, 2, 3})).forEach(System.out::println);
         Arrays.stream(obj.plusOne(new int[]{9})).forEach(System.out::println);
     }
 
     public int[] plusOne(int[] digits) {
-        int carry = 1, data[] = new int[digits.length + 1];
+        int carry = 1;
+        int[] data = new int[digits.length + 1];
         for (int i = data.length - 2; i >= 0; i--) {
             int sum = carry + digits[i];
             carry = 0;

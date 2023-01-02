@@ -4,11 +4,11 @@ package leetcode.practise;
  * @author Vivek
  * @since 24/10/22
  */
-public class Q35_E_Search_Insert_Position {
+public class Q0035_E_SearchInsertPosition {
 
     public static void main(String[] args) {
         int[] nums = {1, 3, 5, 6};
-        Q35_E_Search_Insert_Position obj = new Q35_E_Search_Insert_Position();
+        Q0035_E_SearchInsertPosition obj = new Q0035_E_SearchInsertPosition();
         System.out.println(obj.searchInsert(nums, 5));
     }
 

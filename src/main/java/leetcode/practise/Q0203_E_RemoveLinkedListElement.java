@@ -4,10 +4,10 @@ package leetcode.practise;
  * @author Vivek
  * @since 24/10/22
  */
-public class Q203_E_Remove_Linked_List_Element {
+public class Q0203_E_RemoveLinkedListElement {
 
-    public Q21_E_Merge_Two_Sorted_Lists.ListNode removeElements(Q21_E_Merge_Two_Sorted_Lists.ListNode head, int val) {
-        Q21_E_Merge_Two_Sorted_Lists.ListNode header = head, last = head;
+    public Q0021_E_MergeTwoSortedLists.ListNode removeElements(Q0021_E_MergeTwoSortedLists.ListNode head, int val) {
+        Q0021_E_MergeTwoSortedLists.ListNode header = head, last = head;
         if (head == null) return head;
 
         while (head != null && head.val == val) {
