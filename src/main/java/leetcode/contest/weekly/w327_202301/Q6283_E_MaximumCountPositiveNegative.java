@@ -1,4 +1,4 @@
-package leetcode.contest.weekly327_202301;
+package leetcode.contest.weekly.w327_202301;
 
 /**
  * @author Vivek
