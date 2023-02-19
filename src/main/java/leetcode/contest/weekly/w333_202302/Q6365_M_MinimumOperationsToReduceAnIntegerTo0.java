@@ -5,6 +5,7 @@ import java.util.TreeSet;
 /**
  * @author Vivek
  * @since 2023-02-19
+ * WA
  */
 public class Q6365_M_MinimumOperationsToReduceAnIntegerTo0 {
 

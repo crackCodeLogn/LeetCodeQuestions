@@ -5,6 +5,7 @@ import java.util.TreeMap;
 /**
  * @author Vivek
  * @since 2023-02-12
+ * WA
  */
 public class Q2563_M_Count_the_Number_of_Fair_Pairs {
 

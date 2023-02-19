@@ -7,6 +7,7 @@ import java.util.Map;
 /**
  * @author Vivek
  * @since 2023-02-05
+ * WA
  */
 public class Q2559_M_Count_Vowel_Strings_in_Ranges {
 
