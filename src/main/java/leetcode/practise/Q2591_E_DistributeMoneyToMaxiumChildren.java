@@ -1,4 +1,4 @@
-package leetcode.contest.biweekly.bw100_202303;
+package leetcode.practise;
 
 import java.util.Arrays;
 
@@ -6,10 +6,10 @@ import java.util.Arrays;
  * @author Vivek
  * @since 2023-03-18
  */
-public class Q6323_E_DistributeMoneyToMaxiumChildren {
+public class Q2591_E_DistributeMoneyToMaxiumChildren {
 
     public static void main(String[] args) {
-        Q6323_E_DistributeMoneyToMaxiumChildren q6323EDistributeMoneyToMaxiumChildren = new Q6323_E_DistributeMoneyToMaxiumChildren();
+        Q2591_E_DistributeMoneyToMaxiumChildren q6323EDistributeMoneyToMaxiumChildren = new Q2591_E_DistributeMoneyToMaxiumChildren();
         System.out.println(q6323EDistributeMoneyToMaxiumChildren.distMoney(15, 8));
 
     }
@@ -21,7 +21,7 @@ public class Q6323_E_DistributeMoneyToMaxiumChildren {
         int mod = money % 8;
 
         money -= children;
-        if (money < children) return 0;
+        if (money < 0) return 0;
 
         int[] data = new int[children];
         Arrays.fill(data, 1);
