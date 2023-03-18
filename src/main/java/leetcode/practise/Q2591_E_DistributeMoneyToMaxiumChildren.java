@@ -15,11 +15,7 @@ public class Q2591_E_DistributeMoneyToMaxiumChildren {
     }
 
     public int distMoney(int money, int children) {
-        int cnt = 0;
         if (money < children) return -1;
-        int div = money / 8;
-        int mod = money % 8;
-
         money -= children;
         if (money < 0) return 0;
 
@@ -41,15 +37,11 @@ public class Q2591_E_DistributeMoneyToMaxiumChildren {
             else if (data[i] == 4) c4++;
         }
         int c = children - c8 - c4;
-        if (money > 0) {
-            if (c8 == children) return c8 - 1;
-            return c8;
-        } else {
-            if (c4 > 0) {
-                //rebal
-                if (c == 0) c8--;
-                return Math.max(c8, 0);
-            } else return c8;
+        if (money > 0) return c8 - 1;
+        else {
+            if (c4 == 0) return c8;
+            if (c == 0) c8--;
+            return Math.max(c8, 0);
         }
     }
 }
