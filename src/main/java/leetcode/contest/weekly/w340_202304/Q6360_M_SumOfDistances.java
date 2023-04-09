@@ -43,8 +43,7 @@ public class Q6360_M_SumOfDistances {
             map.put(nums[i], list);
         }
 
-        for (Map.Entry<Integer, List<Integer>> entry : map.entrySet()) {
-            List<Integer> v = entry.getValue();
+        map.forEach((k, v) -> {
             if (v.size() > 1) {
                 long totalSum = 0, preSum = 0;
                 for (int i = 0; i < v.size(); i++) totalSum += v.get(i);
@@ -58,7 +57,7 @@ public class Q6360_M_SumOfDistances {
             } else {
                 data[v.get(0)] = 0;
             }
-        }
+        });
         return data;
     }
 }
