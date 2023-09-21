@@ -4,3 +4,4 @@
 *iml
 .idea/
 src/main/java/tutor/*
+src/test/java/tutor/*
