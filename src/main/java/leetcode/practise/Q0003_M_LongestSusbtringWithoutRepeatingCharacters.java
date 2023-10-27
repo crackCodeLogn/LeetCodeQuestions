@@ -10,9 +10,9 @@ public class Q0003_M_LongestSusbtringWithoutRepeatingCharacters {
 
     public static void main(String[] args) {
         Q0003_M_LongestSusbtringWithoutRepeatingCharacters longestSusbtringWithoutRepeatingCharacters = new Q0003_M_LongestSusbtringWithoutRepeatingCharacters();
-        //System.out.println(longestSusbtringWithoutRepeatingCharacters.lengthOfLongestSubstring("abcabcbb"));
-        //System.out.println(longestSusbtringWithoutRepeatingCharacters.lengthOfLongestSubstring("bbbb"));
-        //System.out.println(longestSusbtringWithoutRepeatingCharacters.lengthOfLongestSubstring("pwwkew"));
+        System.out.println(longestSusbtringWithoutRepeatingCharacters.lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(longestSusbtringWithoutRepeatingCharacters.lengthOfLongestSubstring("bbbb"));
+        System.out.println(longestSusbtringWithoutRepeatingCharacters.lengthOfLongestSubstring("pwwkew"));
         System.out.println(longestSusbtringWithoutRepeatingCharacters.lengthOfLongestSubstring("cbabzgpb"));
     }
 
