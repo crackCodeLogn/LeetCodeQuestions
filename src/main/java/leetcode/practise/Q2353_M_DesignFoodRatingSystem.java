@@ -39,7 +39,6 @@ public class Q2353_M_DesignFoodRatingSystem {
                     cuisineMap.put(node.getCuisine(), queue);
                 }
                 queue.offer(node);
-                cuisineMap.put(node.getCuisine(), queue);
             }
         }
 
@@ -57,9 +56,10 @@ public class Q2353_M_DesignFoodRatingSystem {
 
         public void changeRating(String food, int newRating) {
             Node node = foodMap.get(food);
-            cuisineMap.get(node.getCuisine()).remove(node);
-            foodMap.get(food).setRating(newRating);
-            cuisineMap.get(node.getCuisine()).offer(node);
+            String cuisine = node.getCuisine();
+            cuisineMap.get(cuisine).remove(node);
+            node.setRating(newRating);
+            cuisineMap.get(cuisine).offer(node);
         }
 
         public String highestRated(String cuisine) {
