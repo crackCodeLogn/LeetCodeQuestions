@@ -3,6 +3,8 @@ package leetcode.practise;
 /**
  * @author Vivek
  * @since 2023-12-22
+ * <p>
+ * GOOD ENOUGH TO REVIEW AGAIN (GERA)
  */
 public class Q1422_E_MaximumScoreAfterSplittingAString {
     public static void main(String[] args) {
