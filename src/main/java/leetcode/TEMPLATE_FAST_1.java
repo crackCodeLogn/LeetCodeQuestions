@@ -374,8 +374,94 @@ public class TEMPLATE_FAST_1 {
         }
 
         @Override
+        public boolean equals(Object obj) {
+            if (obj == null) return false;
+            Pair<T, K> other = (Pair<T, K>) obj;
+            return first == other.first && second == other.second;
+        }
+
+        @Override
         public String toString() {
             return String.format("%s %s", first, second);
         }
     }
+
+    // AdjacencyList based Graph, with Dijkstras algo incorporated
+    static class Graph {
+        private final Map<String, Integer> minCostMap = new HashMap<>();
+        private final int V;
+        private final List<List<Pair>> adj;
+
+        Graph(int V) {
+            this.V = V;
+            adj = new ArrayList<>();
+            for (int i = 0; i < V; i++) {
+                adj.add(new ArrayList<>());
+            }
+        }
+
+        void addDirectedEdge(int u, int v, int w) {
+            adj.get(u).add(new Pair(v, w));
+        }
+
+        void addUndirectedEdge(int u, int v, int w) {
+            addDirectedEdge(u, v, w);
+            addDirectedEdge(v, u, w);
+        }
+
+        public Integer getMinCostForPair(String srcDestStringWithSpace) {
+            return minCostMap.get(srcDestStringWithSpace);
+        }
+
+        /**
+         * requires the weights to be +ve, as it uses Dijkstras
+         */
+        void calculateShortestPathFromAllToAll() {
+            for (int i = 0; i < V; i++) shortestPath(i);
+        }
+
+        /**
+         * requires the weights to be +ve, as it uses Dijkstras
+         *
+         * @param src: from where to find the shortest path to all the other 'connected' vertices
+         */
+        void shortestPath(int src) {
+            PriorityQueue<Pair> pq = new PriorityQueue<>(V, Comparator.comparingInt(o -> o.first));
+            int[] dist = new int[V];
+            Arrays.fill(dist, Integer.MAX_VALUE);
+
+            pq.add(new Pair(0, src));
+            dist[src] = 0;
+
+            while (!pq.isEmpty()) {
+                int u = pq.poll().second;
+
+                for (Pair v : adj.get(u)) {
+                    if (dist[v.first] > dist[u] + v.second) {
+                        dist[v.first] = dist[u] + v.second;
+                        pq.add(new Pair(dist[v.first], v.first));
+                    }
+                }
+            }
+
+            //System.out.println("Vertex Distance from Source");
+            for (int i = 0; i < V; i++) {
+                if (dist[i] != Integer.MAX_VALUE) {
+                    String key = src + " " + i;
+                    //System.out.println(i + "\t\t" + dist[i]);
+                    minCostMap.put(key, dist[i]);
+                }
+            }
+        }
+
+        static class Pair {
+            int first, second;
+
+            Pair(int first, int second) {
+                this.first = first;
+                this.second = second;
+            }
+        }
+    }
+
 }
