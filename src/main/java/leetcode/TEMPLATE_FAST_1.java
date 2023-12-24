@@ -241,6 +241,18 @@ public class TEMPLATE_FAST_1 {
         return primes;
     }
 
+    private <T> void swap(T[] data, int i, int j) {
+        T buff = data[i];
+        data[i] = data[j];
+        data[j] = buff;
+    }
+
+    private <T> void swap(List<T> data, int i, int j) {
+        T buff = data.get(i);
+        data.set(i, data.get(j));
+        data.set(j, buff);
+    }
+
     private static <T> List<List<T>> extractPowerSets(List<T> data) {
         int upper = 1 << data.size();
         List<List<T>> powerSets = new ArrayList<>(upper);
