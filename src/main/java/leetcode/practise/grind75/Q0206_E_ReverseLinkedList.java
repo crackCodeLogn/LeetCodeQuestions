@@ -1,4 +1,4 @@
-package leetcode.practise.blind75;
+package leetcode.practise.grind75;
 
 import java.util.Stack;
 
