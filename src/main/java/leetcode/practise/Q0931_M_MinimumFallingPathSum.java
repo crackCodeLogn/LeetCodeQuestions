@@ -7,10 +7,9 @@ import java.util.Arrays;
  * @since 2024-01-19
  */
 public class Q0931_M_MinimumFallingPathSum {
-    private static final int[] Y = {-1, 0, +1};
     private static final int CONSTANT = Integer.MAX_VALUE;
     private int n;
-    private final int[][] data = new int[100][100];
+    private int[][] data;
     private int[][] matrix;
 
     public static void main(String[] args) {
@@ -22,8 +21,9 @@ public class Q0931_M_MinimumFallingPathSum {
 
     public int minFallingPathSum(int[][] matrix) {
         n = matrix.length;
+        this.data = new int[n][n];
         this.matrix = matrix;
-        for (int i = 0; i < 100; i++) Arrays.fill(data[i], CONSTANT);
+        for (int i = 0; i < n; i++) Arrays.fill(data[i], CONSTANT);
 
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < n; i++) {
