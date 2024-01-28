@@ -53,7 +53,7 @@ public class Q100206_M_FindTheMaximumNumberOfElementsInSubset {
             boolean flag = true;
             for (; ; k *= 2) {
                 int a = fastPower(x, k);
-                if (x < 0) break; //overflow
+                if (a < 0) break; //overflow
 
                 Integer val = map.get(a);
                 if (val == null) {
