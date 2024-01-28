@@ -144,6 +144,17 @@ public class TEMPLATE_FAST_1 {
         else mapper.put(key, val - decCnt);
     }
 
+    private static int fastPower(int a, int n) {
+        int data = 1;
+        while (n > 0) {
+            int last_bit = (n & 1);
+            if (last_bit > 0) data *= a;
+            a *= a;
+            n >>= 1;
+        }
+        return data;
+    }
+
     private static int getMaxFromArray(int[] data) {
         int max = Integer.MIN_VALUE;
         for (int i = -1; ++i < data.length; ) if (data[i] > max) max = data[i];
