@@ -22,19 +22,21 @@ public class Q0994_M_RottingOranges {
         this.grid = grid;
         this.n = grid.length;
         this.m = grid[0].length;
+        this.visited = new boolean[n][m];
         Queue<int[]> rottens = new LinkedList<>();
-        boolean anyGood = false;
+        int ones = 0;
 
         for (int i = 0; i < n; i++)
             for (int j = 0; j < m; j++) {
-                if (grid[i][j] == 2) rottens.offer(new int[]{i, j});
-                else if (grid[i][j] == 1) anyGood = true;
+                if (grid[i][j] == 2) {
+                    visited[i][j] = true;
+                    rottens.offer(new int[]{i, j});
+                } else if (grid[i][j] == 1) ones++;
             }
-        return anyGood ? bfs(rottens) : 0;
+        return ones > 0 ? bfs(rottens, ones) : 0;
     }
 
-    private int bfs(Queue<int[]> queue) {
-        this.visited = new boolean[n][m];
+    private int bfs(Queue<int[]> queue, int ones) {
         int minz = 0;
 
         List<int[]> list = new ArrayList<>();
@@ -46,6 +48,10 @@ public class Q0994_M_RottingOranges {
                     int x = cell[0] + X[k], y = cell[1] + Y[k];
                     if (x < 0 || y < 0 || x >= n || y >= m || visited[x][y] || grid[x][y] == 0) continue;
                     visited[x][y] = true;
+                    if (grid[x][y] == 1) {
+                        ones--;
+                        grid[x][y] = 2;
+                    }
                     list.add(new int[]{x, y});
                 }
             }
@@ -55,8 +61,7 @@ public class Q0994_M_RottingOranges {
             list.clear();
         }
 
-        for (int q = 0; q < n; q++) for (int w = 0; w < m; w++) if (!visited[q][w] && grid[q][w] == 1) return -1;
-        return minz;
+        return ones > 0 ? -1 : minz;
     }
 
 }
