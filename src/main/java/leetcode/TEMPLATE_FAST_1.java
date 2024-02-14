@@ -346,6 +346,11 @@ public class TEMPLATE_FAST_1 {
         out.println();
     }
 
+    private static void printArray(int[] data) {
+        for (int t : data) System.out.print(t + " ");
+        System.out.println();
+    }
+
     private static <T> void printCollection(Collection<T> data) {
         data.forEach(t -> out.print(t + " "));
         out.println();
