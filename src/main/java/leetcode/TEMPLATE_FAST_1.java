@@ -252,6 +252,26 @@ public class TEMPLATE_FAST_1 {
         return primes;
     }
 
+    private static int[] sieveEratosthenes(int n) { // faster
+        int[] minPrimeFactors = new int[n + 1];
+        for (int i = 2; i <= n; ++i) minPrimeFactors[i] = i;
+        for (int i = 2; i * i < n; ++i)
+            if (minPrimeFactors[i] == i)
+                for (int j = i * i; j < n; j += i) minPrimeFactors[j] = Math.min(minPrimeFactors[j], i);
+        return minPrimeFactors;
+    }
+
+    private static List<Integer> getPrimeFactors(int num, int[] minPrimeFactors) { // faster
+        List<Integer> primeFactors = new ArrayList<>();
+        while (num > 1) {
+            int divisor = minPrimeFactors[num];
+            primeFactors.add(divisor);
+            while (num % divisor == 0)
+                num /= divisor;
+        }
+        return primeFactors;
+    }
+
     private <T> void swap(T[] data, int i, int j) {
         T buff = data[i];
         data[i] = data[j];
