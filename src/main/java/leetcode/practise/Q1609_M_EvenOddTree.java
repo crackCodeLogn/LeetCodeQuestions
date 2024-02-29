@@ -16,11 +16,10 @@ public class Q1609_M_EvenOddTree {
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-        int level = 0;
+        boolean flag = false;
         while (!queue.isEmpty()) {
             List<TreeNode> list = new ArrayList<>();
-            boolean flag = isEven(level);
-            level++;
+            flag = !flag;
 
             int base = -1;
             while (!queue.isEmpty()) {
@@ -50,7 +49,6 @@ public class Q1609_M_EvenOddTree {
     private boolean isEven(int num) {
         return !isOdd(num);
     }
-
 
     public class TreeNode {
         int val;
