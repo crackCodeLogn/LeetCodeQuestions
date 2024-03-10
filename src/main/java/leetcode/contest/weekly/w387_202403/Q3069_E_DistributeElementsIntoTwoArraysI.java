@@ -7,7 +7,7 @@ import java.util.List;
  * @author Vivek
  * @since 2024-03-03
  */
-public class Q100243_E_DistributeElementsIntoTwoArraysI {
+public class Q3069_E_DistributeElementsIntoTwoArraysI {
     public int[] resultArray(int[] nums) {
         int n = nums.length;
         List<Integer> l1 = new ArrayList<>();

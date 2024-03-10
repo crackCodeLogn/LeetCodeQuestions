@@ -8,10 +8,10 @@ import java.util.List;
  * @author Vivek
  * @since 2024-03-10
  */
-public class Q100251_M_ShortestUncommonStringInAnArray {
+public class Q3076_M_ShortestUncommonStringInAnArray {
 
     public static void main(String[] args) {
-        Q100251_M_ShortestUncommonStringInAnArray q100251MShortestUncommonStringInAnArray = new Q100251_M_ShortestUncommonStringInAnArray();
+        Q3076_M_ShortestUncommonStringInAnArray q100251MShortestUncommonStringInAnArray = new Q3076_M_ShortestUncommonStringInAnArray();
         String[] result;
         result = q100251MShortestUncommonStringInAnArray.shortestSubstrings(new String[]{"cab", "ad", "bad", "c"});
         result = q100251MShortestUncommonStringInAnArray.shortestSubstrings(new String[]{"abc", "bcd", "abcd"});

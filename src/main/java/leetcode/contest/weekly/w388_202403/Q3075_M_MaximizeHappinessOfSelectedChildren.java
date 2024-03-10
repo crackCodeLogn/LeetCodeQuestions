@@ -6,10 +6,10 @@ import java.util.Arrays;
  * @author Vivek
  * @since 2024-03-10
  */
-public class Q100247_M_MaximizeHappinessOfSelectedChildren {
+public class Q3075_M_MaximizeHappinessOfSelectedChildren {
 
     public static void main(String[] args) {
-        Q100247_M_MaximizeHappinessOfSelectedChildren q100247MMaximizeHappinessOfSelectedChildren = new Q100247_M_MaximizeHappinessOfSelectedChildren();
+        Q3075_M_MaximizeHappinessOfSelectedChildren q100247MMaximizeHappinessOfSelectedChildren = new Q3075_M_MaximizeHappinessOfSelectedChildren();
         System.out.println(q100247MMaximizeHappinessOfSelectedChildren.maximumHappinessSum(new int[]{1, 2, 3}, 2));
         System.out.println(q100247MMaximizeHappinessOfSelectedChildren.maximumHappinessSum(new int[]{1, 1, 1, 1}, 2));
         System.out.println(q100247MMaximizeHappinessOfSelectedChildren.maximumHappinessSum(new int[]{2, 3, 4, 5}, 1));

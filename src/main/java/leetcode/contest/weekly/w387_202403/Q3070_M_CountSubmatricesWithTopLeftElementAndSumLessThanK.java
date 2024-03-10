@@ -4,9 +4,9 @@ package leetcode.contest.weekly.w387_202403;
  * @author Vivek
  * @since 2024-03-03
  */
-public class Q100237_M_CountSubmatricesWithTopLeftElementAndSumLessThanK {
+public class Q3070_M_CountSubmatricesWithTopLeftElementAndSumLessThanK {
     public static void main(String[] args) {
-        Q100237_M_CountSubmatricesWithTopLeftElementAndSumLessThanK q100237MCountSubmatricesWithTopLeftElementAndSumLessThanK = new Q100237_M_CountSubmatricesWithTopLeftElementAndSumLessThanK();
+        Q3070_M_CountSubmatricesWithTopLeftElementAndSumLessThanK q100237MCountSubmatricesWithTopLeftElementAndSumLessThanK = new Q3070_M_CountSubmatricesWithTopLeftElementAndSumLessThanK();
         System.out.println(q100237MCountSubmatricesWithTopLeftElementAndSumLessThanK.countSubmatrices(new int[][]{
                 {7, 6, 3},
                 {6, 6, 1},

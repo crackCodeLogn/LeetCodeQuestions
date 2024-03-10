@@ -7,10 +7,10 @@ import java.util.List;
  * @author Vivek
  * @since 2024-02-25
  */
-public class Q3047_M_FindTheLargestAreaOfSquareInsideTwoRectangles {
+public class Q3047_M_FindTheLargestAreaOfSquareInsideTwoRectangles_WA {
 
     public static void main(String[] args) {
-        Q3047_M_FindTheLargestAreaOfSquareInsideTwoRectangles q3047MFindTheLargestAreaOfSquareInsideTwoRectangles = new Q3047_M_FindTheLargestAreaOfSquareInsideTwoRectangles();
+        Q3047_M_FindTheLargestAreaOfSquareInsideTwoRectangles_WA q3047MFindTheLargestAreaOfSquareInsideTwoRectangles = new Q3047_M_FindTheLargestAreaOfSquareInsideTwoRectangles_WA();
 
         System.out.println(q3047MFindTheLargestAreaOfSquareInsideTwoRectangles.largestSquareArea(new int[][]{
                 {1, 1}, {2, 2}, {3, 1}

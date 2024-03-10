@@ -4,10 +4,10 @@ package leetcode.contest.weekly.w387_202403;
  * @author Vivek
  * @since 2024-03-03
  */
-public class Q100234_M_MinimumOperationsToWriteTheLetterYOnAGrid {
+public class Q3071_M_MinimumOperationsToWriteTheLetterYOnAGrid {
 
     public static void main(String[] args) {
-        Q100234_M_MinimumOperationsToWriteTheLetterYOnAGrid q100234MMinimumOperationsToWriteTheLetterYOnAGrid = new Q100234_M_MinimumOperationsToWriteTheLetterYOnAGrid();
+        Q3071_M_MinimumOperationsToWriteTheLetterYOnAGrid q100234MMinimumOperationsToWriteTheLetterYOnAGrid = new Q3071_M_MinimumOperationsToWriteTheLetterYOnAGrid();
         System.out.println(q100234MMinimumOperationsToWriteTheLetterYOnAGrid.minimumOperationsToWriteY(new int[][]{{1, 2, 2}, {1, 1, 0}, {0, 1, 0},})); //3
         System.out.println(q100234MMinimumOperationsToWriteTheLetterYOnAGrid.minimumOperationsToWriteY(new int[][]{{0, 1, 0, 1, 0}, {2, 1, 0, 1, 2}, {2, 2, 2, 0, 1}, {2, 2, 2, 2, 2}, {2, 1, 2, 2, 2},})); //12
         System.out.println(q100234MMinimumOperationsToWriteTheLetterYOnAGrid.minimumOperationsToWriteY(new int[][]{{1, 0, 1}, {0, 1, 0}, {0, 1, 0},})); //0
