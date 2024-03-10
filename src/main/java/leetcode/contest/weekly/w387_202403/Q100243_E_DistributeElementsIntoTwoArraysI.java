@@ -1,4 +1,4 @@
-package leetcode.contest.weekly.w387_2020403;
+package leetcode.contest.weekly.w387_202403;
 
 import java.util.ArrayList;
 import java.util.List;
