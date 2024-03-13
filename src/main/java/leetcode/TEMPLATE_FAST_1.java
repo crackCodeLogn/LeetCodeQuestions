@@ -43,6 +43,10 @@ public class TEMPLATE_FAST_1 {
         return n * (n - 1) / 2;
     }
 
+    private static boolean isPerfectSquare(int n) {
+        return Math.ceil(Math.sqrt(n)) == Math.floor(Math.sqrt(n));
+    }
+
     private static long fastExponentiation(long base, long power, long mod) {
         long val = 1;
         base %= mod;
