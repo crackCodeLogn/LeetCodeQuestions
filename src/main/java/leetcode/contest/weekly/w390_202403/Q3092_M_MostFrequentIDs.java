@@ -17,7 +17,7 @@ public class Q3092_M_MostFrequentIDs {
         System.out.println(Arrays.toString(q3092MMostFrequentIDs.mostFrequentIDs(new int[]{5, 5, 3}, new int[]{2, -2, 1})));
     }
 
-    public long[] mostFrequentIDs(int[] nums, int[] freq) {
+    public long[] mostFrequentIDs(int[] nums, int[] freq) { // 148ms
         int n = nums.length;
         long[] res = new long[n];
 
@@ -52,6 +52,27 @@ public class Q3092_M_MostFrequentIDs {
             }
 
             res[i] = exit == null ? 0 : exit.getCount();
+        }
+
+        return res;
+    }
+
+    public long[] mostFrequentIDs2(int[] nums, int[] freq) { // TLE -- shows that the remove method is slow
+        int n = nums.length;
+        long[] res = new long[n];
+
+        Map<Integer, Node> noder = new HashMap<>();
+        PriorityQueue<Node> data = new PriorityQueue<>();
+        for (int i = 0; i < n; i++) {
+            int num = nums[i];
+            int count = freq[i];
+            Node node = noder.computeIfAbsent(num, Node::new);
+            data.remove(node);
+            node.update(count);
+            if (!node.isEmpty()) data.offer(node);
+            else noder.remove(num);
+
+            res[i] = data.isEmpty() ? 0 : data.peek().count;
         }
 
         return res;
