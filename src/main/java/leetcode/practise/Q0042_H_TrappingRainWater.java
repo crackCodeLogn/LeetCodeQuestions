@@ -11,36 +11,20 @@ public class Q0042_H_TrappingRainWater {
 
     public static void main(String[] args) {
         Q0042_H_TrappingRainWater q42HTrappingRainWater = new Q0042_H_TrappingRainWater();
-        System.out.println(q42HTrappingRainWater.trap(new int[]{
-                0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1
-        }));
+        System.out.println(q42HTrappingRainWater.trap(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1})); // 9
+        System.out.println(q42HTrappingRainWater.trap(new int[]{4, 2, 0, 3, 2, 5})); // 6
     }
 
     public int trap(int[] height) {
         int n = height.length;
-        if (n <= 2) return 0;
-        int l1 = height[n - 1];
-        int l2 = height[n - 2];
-        int lastHigh = 0;
-        List<Integer> heights = new ArrayList<>();
-        if (l2 >= l1) { //upward or eq
-            lastHigh = l2;
-            heights.add(lastHigh);
-        } else { //lower
-            lastHigh = l1;
-            heights.add(lastHigh);
-            heights.add(l1);
-        }
-        for (int i = n - 3; i >= 0; i--) {
-            if (height[i] > height[i + 1]) {
+        int res = 0;
+        int[] l = new int[n];
+        int[] r = new int[n];
 
-            } else if (height[i] == height[i + 1]) {
+        for (int i = 0; i < n; i++) l[i] = i == 0 ? height[i] : Math.max(height[i], l[i - 1]);
+        for (int i = n - 1; i >= 0; i--) r[i] = i == n - 1 ? height[i] : Math.max(height[i], r[i + 1]);
+        for (int i = 0; i < n; i++) res += Math.min(l[i], r[i]) - height[i];
 
-            } else {
-
-            }
-        }
-
-        return 0;
+        return res;
     }
 }
