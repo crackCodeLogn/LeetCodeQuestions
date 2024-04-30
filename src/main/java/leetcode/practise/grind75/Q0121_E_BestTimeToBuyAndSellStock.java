@@ -6,7 +6,16 @@ package leetcode.practise.grind75;
  */
 public class Q0121_E_BestTimeToBuyAndSellStock {
 
-    public int maxProfit(int[] prices) {
+    public int maxProfit(int[] prices) { // 1ms
+        int min = prices[0], delta = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (i < prices.length - 1 && prices[i] < min) min = prices[i];
+            delta = Math.max(delta, prices[i] - min);
+        }
+        return delta;
+    }
+
+    public int maxProfit2(int[] prices) { // 3 ms
         int n = prices.length;
         if (n == 1) return 0;
         if (n == 2) return Math.max(0, prices[1] - prices[0]);
