@@ -1,9 +1,6 @@
 package leetcode.practise;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Q0506_E_RelativeRanks {
 
@@ -13,7 +10,36 @@ public class Q0506_E_RelativeRanks {
         System.out.println(Arrays.toString(q0506ERelativeRanks.findRelativeRanks(new int[]{10, 3, 8, 9, 4})));
     }
 
-    public String[] findRelativeRanks(int[] score) {
+    public String[] findRelativeRanks(int[] score) { // 9ms
+        String[] data = new String[score.length];
+        PriorityQueue<Node> nodes = new PriorityQueue<>(Comparator.comparingInt(Node::getValue).reversed());
+        for (int i = 0; i < score.length; i++) nodes.offer(new Node(i, score[i]));
+
+        int i = 1;
+        while (!nodes.isEmpty()) {
+            Node node = nodes.poll();
+            String result;
+            switch (i) {
+                case 1:
+                    result = "Gold Medal";
+                    break;
+                case 2:
+                    result = "Silver Medal";
+                    break;
+                case 3:
+                    result = "Bronze Medal";
+                    break;
+                default:
+                    result = String.valueOf(i);
+            }
+            i++;
+            data[node.index] = result;
+        }
+
+        return data;
+    }
+
+    public String[] findRelativeRanks2(int[] score) { // 11ms
         String[] data = new String[score.length];
         List<Node> nodes = new ArrayList<>();
         for (int i = 0; i < score.length; i++) nodes.add(new Node(i, score[i]));
