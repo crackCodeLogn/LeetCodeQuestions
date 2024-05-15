@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * @author Vivek
@@ -16,6 +19,11 @@ public class TEMPLATE_FAST_1 {
     final static double LOG_2 = Math.log(2);
     private static final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
     private static final PrintWriter out = new PrintWriter(System.out);
+    private static final int[] X_4W = {0, 1, 0, -1};
+    private static final int[] Y_4W = {1, 0, -1, 0};
+
+    private static final int[] X_8W = {0, 1, 1, 1, 0, -1, -1, -1};
+    private static final int[] Y_8W = {1, 1, 0, -1, -1, -1, 0, 1};
 
     public static void main(String[] args) throws IOException {
         int t = readInt();
@@ -390,6 +398,23 @@ public class TEMPLATE_FAST_1 {
     private static <T> void printList(List<T> data) {
         for (int i = -1; ++i < data.size(); ) out.printf(data.get(i) + " ");
         out.println();
+    }
+
+    // expects input to be in format "[[1,0,0],[0,0,0],[0,0,1]]"
+    private static List<List<Integer>> converter(String data) {
+        List<List<Integer>> result = new ArrayList<>();
+        data = data.substring(1, data.length() - 1);
+        Pattern pattern = Pattern.compile("\\[(.*?)]");
+        Matcher matcher = pattern.matcher(data);
+
+        while (matcher.find()) {
+            String str = matcher.group(0);
+            str = str.substring(1, str.length() - 1);
+
+            List<Integer> list = Arrays.stream(str.split(",")).map(Integer::parseInt).collect(Collectors.toList());
+            result.add(list);
+        }
+        return result;
     }
 
     enum ORDER {
