@@ -421,33 +421,33 @@ public class TEMPLATE_FAST_1 {
         ASC, DESC
     }
 
-    private static class Pair<T, K> {
-        private final T first;
-        private final K second;
+    private static final class Pair<T, K> {
+        private final T key;
+        private final K value;
 
-        public Pair(T first, K second) {
-            this.first = first;
-            this.second = second;
+        public Pair(T key, K value) {
+            this.key = key;
+            this.value = value;
         }
 
-        public T getFirst() {
-            return first;
+        public T getKey() {
+            return key;
         }
 
-        public K getSecond() {
-            return second;
+        public K getValue() {
+            return value;
         }
 
         @Override
         public boolean equals(Object obj) {
             if (obj == null) return false;
             Pair<T, K> other = (Pair<T, K>) obj;
-            return first == other.first && second == other.second;
+            return key == other.key && value == other.value;
         }
 
         @Override
         public String toString() {
-            return String.format("%s %s", first, second);
+            return String.format("%s %s", key, value);
         }
     }
 
