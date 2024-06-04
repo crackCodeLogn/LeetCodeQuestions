@@ -16,16 +16,16 @@ public class Q0409_E_LongestPalindrome {
         for (int i = 0; i < s.length(); i++) data[s.charAt(i)]++;
         int cnt = 0;
         boolean flag = true;
-        for (int i = 0; i < 130; i++) {
+        for (int i = 65; i < 130; i++) {
             int v = data[i];
             if (v == 0) continue;
-            int div = v / 2;
-            cnt += div * 2;
-            v = v % 2;
-            if (v == 1 && flag) {
+            if (flag && (v & 1) == 1) {
                 cnt++;
+                v--;
                 flag = false;
             }
+            if ((v & 1) == 1) v--;
+            cnt += v;
         }
         return cnt;
     }
