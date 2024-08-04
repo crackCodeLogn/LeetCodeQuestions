@@ -33,7 +33,7 @@ public class Q100114_M_MinimumSumOfMountainTriplets2 {
         System.out.println(minimumSumOfMountainTriplets2.minimumSum(new int[]{6, 5, 4, 3, 4, 5}));
     }
 
-    public int minimumSum(int[] nums) {
+    public int minimumSum2(int[] nums) {
         int sum = Integer.MAX_VALUE, n = nums.length;
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < n; i++) augmentCount(map, nums[i]);
@@ -68,6 +68,31 @@ public class Q100114_M_MinimumSumOfMountainTriplets2 {
                 }
             }
         }*/
+        return sum == Integer.MAX_VALUE ? -1 : sum;
+    }
+
+    public int minimumSum(int[] nums) {
+        int[] min = new int[nums.length];
+        int[] min2 = new int[nums.length];
+        min[0] = -1;
+        min2[min2.length - 1] = -1;
+        int m = nums[0], n = nums.length;
+        min[1] = m;
+        for (int i = 2; i < nums.length; i++) {
+            m = Math.min(m, nums[i - 1]);
+            min[i] = m;
+        }
+        m = nums[n - 1];
+        min2[n - 2] = m;
+        for (int i = n - 3; i >= 0; i--) {
+            m = Math.min(m, nums[i + 1]);
+            min2[i] = m;
+        }
+        int sum = Integer.MAX_VALUE;
+        for (int i = 0; i < n; i++) {
+            if (min[i] == -1 || min2[i] == -1) continue;
+            if (nums[i] > min[i] && nums[i] > min2[i]) sum = Math.min(sum, nums[i] + min[i] + min2[i]);
+        }
         return sum == Integer.MAX_VALUE ? -1 : sum;
     }
 }
