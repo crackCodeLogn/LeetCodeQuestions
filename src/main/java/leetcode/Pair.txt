@@ -7,6 +7,10 @@ private static final class Pair<T, K> {
         this.value = value;
     }
 
+    public static <T, K> Pair<T, K> of(T t, K k) {
+        return new Pair<>(t, k);
+    }
+
     public T getKey() {
         return key;
     }
