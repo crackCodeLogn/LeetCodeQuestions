@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.practise;
 
 import java.util.ArrayList;
 import java.util.Comparator;
