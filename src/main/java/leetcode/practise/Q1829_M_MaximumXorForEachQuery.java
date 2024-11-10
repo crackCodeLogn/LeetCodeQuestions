@@ -31,16 +31,18 @@ public class Q1829_M_MaximumXorForEachQuery {
     return result;
   }
 
-  private int getK(int xor, int maxBit) {
+  private int getK(int xor, int maxBit) { // 46 ms, down from the 249 ms on string builder usage
     int max = (int) Math.pow(2, maxBit) - 1;
     if (xor == 0) return max;
-    StringBuilder data = new StringBuilder();
+    int k = 0, data = 0;
     while (max > 0) {
       boolean set = (xor & 1) == 1;
-      data.append(set ? 0 : 1);
+      if (k == 0) k = 1;
+      else k <<= 1;
+      data += k * (set ? 0 : 1);
       xor >>= 1;
       max >>= 1;
     }
-    return Integer.parseInt(data.reverse().toString(), 2);
+    return data;
   }
 }
