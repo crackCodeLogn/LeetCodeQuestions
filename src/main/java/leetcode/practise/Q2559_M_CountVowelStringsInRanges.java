@@ -1,5 +1,8 @@
 package leetcode.practise;
 
+import static leetcode.TEMPLATE_FAST_1.extractIntMatrix;
+import static leetcode.TEMPLATE_FAST_1.extractStringArray;
+
 import java.util.Arrays;
 import java.util.Set;
 
@@ -42,43 +45,8 @@ public class Q2559_M_CountVowelStringsInRanges {
                         + "\"lvwtmnpkswiyoheshvyjjhgzvwayv\",\"ykbonftzsuuv\",\"tpbyufbbqpe\",\"nozcjouwqrxup\",\"o\","
                         + "\"bzvicojsvpvaglmveonqabc\",\"jefoabkhvaikfnjgamzbvisoff\",\"tihdokbjutzwmuukkol\","
                         + "\"rjbqfnmoccwhidzzqekaudnsrhkybggicvmvbgch\"]"),
-                extractMatrix(
+                extractIntMatrix(
                     "[[7, 10],[6, 9],[12, 13],[17, 18],[5, 10],[12, 12],[17, 19],[1, 18],[13, 18],[3, 11],[6, 14],[9, 10],[3, 19],[13, 18],[17, 18],[5, 7],[3, 12],[9, 11],[15, 17],[7, 15],[18, 18],[2, 17]]"))));
-  }
-
-  private static String[] extractStringArray(String input) {
-    if (input.isBlank()) return null;
-
-    input = input.strip();
-    int start = 0, end = input.length();
-    if (input.charAt(0) == '[') start++;
-    if (input.charAt(input.length() - 1) == ']') end--;
-    input = input.substring(start, end);
-
-    return Arrays.stream(input.split(","))
-        .map(str -> str.strip().replaceAll("\"", ""))
-        .toArray(String[]::new);
-  }
-
-  private static int[][] extractMatrix(String input) {
-    if (input.isBlank()) return null;
-
-    input = input.strip();
-    int start = 0, end = input.length();
-    if (input.charAt(0) == '[') start++;
-    if (input.charAt(input.length() - 1) == ']') end--;
-    input = input.substring(start, end);
-
-    String[] parts = input.split("],\\[");
-    int[][] matrix = new int[parts.length][2];
-    for (int i = 0; i < parts.length; i++) {
-      String[] subParts = parts[i].strip().split(",");
-      subParts[0] = subParts[0].replaceAll("\\[", "");
-      subParts[1] = subParts[1].replaceAll("]", "");
-      matrix[i][0] = Integer.parseInt(subParts[0].strip());
-      matrix[i][1] = Integer.parseInt(subParts[1].strip());
-    }
-    return matrix;
   }
 
   public int[] vowelStrings(String[] words, int[][] queries) { // 6 ms, beats 74.03%

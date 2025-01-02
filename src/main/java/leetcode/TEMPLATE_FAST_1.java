@@ -423,6 +423,41 @@ public class TEMPLATE_FAST_1 {
     DESC
   }
 
+  public static String[] extractStringArray(String input) {
+    if (input.isBlank()) return null;
+
+    input = input.strip();
+    int start = 0, end = input.length();
+    if (input.charAt(0) == '[') start++;
+    if (input.charAt(input.length() - 1) == ']') end--;
+    input = input.substring(start, end);
+
+    return Arrays.stream(input.split(","))
+        .map(str -> str.strip().replaceAll("\"", ""))
+        .toArray(String[]::new);
+  }
+
+  public static int[][] extractIntMatrix(String input) {
+    if (input.isBlank()) return null;
+
+    input = input.strip();
+    int start = 0, end = input.length();
+    if (input.charAt(0) == '[') start++;
+    if (input.charAt(input.length() - 1) == ']') end--;
+    input = input.substring(start, end);
+
+    String[] parts = input.split("],\\[");
+    int[][] matrix = new int[parts.length][2];
+    for (int i = 0; i < parts.length; i++) {
+      String[] subParts = parts[i].strip().split(",");
+      subParts[0] = subParts[0].replaceAll("\\[", "");
+      subParts[1] = subParts[1].replaceAll("]", "");
+      matrix[i][0] = Integer.parseInt(subParts[0].strip());
+      matrix[i][1] = Integer.parseInt(subParts[1].strip());
+    }
+    return matrix;
+  }
+
   private static final class Pair<T, K> {
     private final T key;
     private final K value;
