@@ -44,7 +44,7 @@ public class Q1462_M_CourseScheduleIV {
   }
 
   public List<Boolean> checkIfPrerequisite(
-      int numCourses, int[][] prerequisites, int[][] queries) { // 57ms, beats 37.79%
+      int numCourses, int[][] prerequisites, int[][] queries) { // 40ms, beats 57.06%
     List<Boolean> result = new ArrayList<>(queries.length);
     Map<Integer, Node> nodeMap = new HashMap<>(numCourses);
     for (int i = 0; i < numCourses; i++) nodeMap.put(i, new Node(i));
@@ -60,7 +60,7 @@ public class Q1462_M_CourseScheduleIV {
     nodeMap.forEach(
         (k, v) -> {
           Set<Integer> visited = new HashSet<>();
-          dpCrawl(v, visited);
+          dfsCrawl(v, visited);
           visited.remove(k);
           data.put(k, visited);
         });
@@ -73,16 +73,16 @@ public class Q1462_M_CourseScheduleIV {
     return result;
   }
 
-  private void dpCrawl(Node node, Set<Integer> visited) {
+  private void dfsCrawl(Node node, Set<Integer> visited) {
     if (visited.contains(node.val)) return;
-    /*if (data.containsKey(node.val)) {
+    visited.add(node.val);
+    if (data.containsKey(node.val)) {
       visited.addAll(data.get(node.val));
       return;
-    }*/
-    visited.add(node.val);
+    }
     for (Node connect : node.connected) {
       if (visited.contains(connect.val)) continue;
-      dpCrawl(connect, visited);
+      dfsCrawl(connect, visited);
     }
   }
 
