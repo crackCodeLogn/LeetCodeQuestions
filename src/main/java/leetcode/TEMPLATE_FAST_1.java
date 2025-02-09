@@ -117,7 +117,13 @@ public class TEMPLATE_FAST_1 {
 
   private static List<Integer> getFactors(int n) {
     List<Integer> factors = new ArrayList<>(n / 2);
-    for (int i = 1; i <= Math.sqrt(n); i++) if (n % i == 0) factors.add(i);
+    factors.add(1);
+    for (int i = 2; i * i <= n; i++)
+      if (n % i == 0) {
+        factors.add(i);
+        if (i != n / i) factors.add(n / i);
+      }
+    factors.add(n);
     return factors;
   }
 
