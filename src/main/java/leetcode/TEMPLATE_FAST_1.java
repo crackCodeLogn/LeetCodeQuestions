@@ -19,8 +19,8 @@ public class TEMPLATE_FAST_1 {
   static final double LOG_2 = Math.log(2);
   private static final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
   private static final PrintWriter out = new PrintWriter(System.out);
-  private static final int[] X_4W = {0, 1, 0, -1};
-  private static final int[] Y_4W = {1, 0, -1, 0};
+  private static final int[] X_4W = {0, 1, 0, -1}; // S, E, N, W
+  private static final int[] Y_4W = {1, 0, -1, 0}; // S, E, N, W
 
   private static final int[] X_8W = {0, 1, 1, 1, 0, -1, -1, -1};
   private static final int[] Y_8W = {1, 1, 0, -1, -1, -1, 0, 1};
