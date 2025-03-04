@@ -13,6 +13,7 @@ public class Q1780_M_CheckIfNumberIsASumOfPowersOfThree {
   public static void main(String[] args) {
     Q1780_M_CheckIfNumberIsASumOfPowersOfThree q1780MCheckIfNumberIsASumOfPowersOfThree =
         new Q1780_M_CheckIfNumberIsASumOfPowersOfThree();
+    System.out.println(q1780MCheckIfNumberIsASumOfPowersOfThree.checkPowersOfThree(6574365));
     System.out.println(q1780MCheckIfNumberIsASumOfPowersOfThree.checkPowersOfThree(3));
     System.out.println(q1780MCheckIfNumberIsASumOfPowersOfThree.checkPowersOfThree(1));
     System.out.println(q1780MCheckIfNumberIsASumOfPowersOfThree.checkPowersOfThree(2));
@@ -21,7 +22,23 @@ public class Q1780_M_CheckIfNumberIsASumOfPowersOfThree {
     System.out.println(q1780MCheckIfNumberIsASumOfPowersOfThree.checkPowersOfThree(21));
   }
 
-  public boolean checkPowersOfThree(int n) { // 1ms, beats 15.70%
+  public boolean checkPowersOfThree(int n) { // 0 ms, beats 100%
+    int last = 0;
+    double log3 = Math.log10(3);
+    while (n > 0) {
+      // int base = (int) (Math.log(n) / log3); // gave weird precision error 243 => 4.99999999999
+      // and not 5
+      int base = (int) (Math.log10(n) / log3); // this worked for 243... wth?
+      int v = (int) Math.pow(3, base);
+      if (last == v) return false;
+      last = v;
+      n -= v;
+      if (n == 0) return true;
+    }
+    return false;
+  }
+
+  public boolean checkPowersOfThree2(int n) { // 1ms, beats 15.70%
     if (THREE.isEmpty()) {
       int v = 3;
       THREE.add(1);
