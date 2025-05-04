@@ -2,7 +2,9 @@ package leetcode.practise;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Vivek
@@ -32,8 +34,19 @@ public class Q1128_E_NumberOfEquivalentDominoPairs {
             }));
   }
 
+  public int numEquivDominoPairs(int[][] dominoes) { // 9 ms, beats 63.36%
+    Map<Integer, Integer> map = new HashMap<>();
+    for (int[] domino : dominoes) {
+      int key = 10 * (Math.min(domino[0], domino[1])) + Math.max(domino[0], domino[1]);
+      map.compute(key, (k, v) -> v == null ? 1 : v + 1);
+    }
+    int cnt = 0;
+    for (Integer val : map.values()) cnt += nc2(val);
+    return cnt;
+  }
+
   // need to find a simpler solution than this, as its an easy problem
-  public int numEquivDominoPairs(int[][] dominoes) { // 16ms, beats 37.40%
+  public int numEquivDominoPairs3(int[][] dominoes) { // 16ms, beats 37.40%
     int cnt = 0;
     List<Node> nodes = new ArrayList<>(dominoes.length);
     for (int[] domino : dominoes) {
