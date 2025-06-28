@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * @author Vivek
@@ -15,6 +16,13 @@ public class Q2099_E_FindSubsequenceOfLengthKWithTheLargestSum {
     Q2099_E_FindSubsequenceOfLengthKWithTheLargestSum
         q2099EFindSubsequenceOfLengthKWithTheLargestSum =
             new Q2099_E_FindSubsequenceOfLengthKWithTheLargestSum();
+    System.out.println(
+        Arrays.toString(
+            q2099EFindSubsequenceOfLengthKWithTheLargestSum.maxSubsequence(
+                new int[] {
+                  50, -75,
+                },
+                2)));
     System.out.println(
         Arrays.toString(
             q2099EFindSubsequenceOfLengthKWithTheLargestSum.maxSubsequence(
@@ -30,6 +38,19 @@ public class Q2099_E_FindSubsequenceOfLengthKWithTheLargestSum {
                   3, 4, 3, 3,
                 },
                 2)));
+  }
+
+  public int[] maxSubsequence3(int[] nums, int k) { // 11ms, beats 18.90%
+    int[] data = new int[k];
+    List<Node> nodes = new ArrayList<>();
+    for (int i = 0; i < nums.length; i++) nodes.add(new Node(i, nums[i]));
+    nodes.sort(Comparator.comparingInt(Node::value));
+    PriorityQueue<Node> queue = new PriorityQueue<>(Comparator.comparingInt(Node::i));
+    for (int i = nums.length - 1; k-- > 0; i--) queue.add(nodes.get(i));
+
+    int j = 0;
+    while (!queue.isEmpty()) data[j++] = queue.poll().value();
+    return data;
   }
 
   public int[] maxSubsequence(int[] nums, int k) { // 10ms, beats 25.59%
