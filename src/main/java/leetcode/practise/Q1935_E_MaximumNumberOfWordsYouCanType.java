@@ -14,7 +14,24 @@ public class Q1935_E_MaximumNumberOfWordsYouCanType {
     System.out.println(q1935EMaximumNumberOfWordsYouCanType.canBeTypedWords("leet code", "e"));
   }
 
-  public int canBeTypedWords(String text, String brokenLetters) { // 4ms, beats 27.38%
+  public int canBeTypedWords(String text, String brokenLetters) { // 2ms, beats 91.65%
+    int cnt = 0;
+    boolean[] broken = new boolean[26];
+    for (int i = 0; i < brokenLetters.length(); i++) broken[brokenLetters.charAt(i) - 'a'] = true;
+    for (String word : text.split(" ")) {
+      boolean possible = true;
+      for (int i = 0; i < word.length(); i++) {
+        if (broken[word.charAt(i) - 'a']) {
+          possible = false;
+          break;
+        }
+      }
+      if (possible) cnt++;
+    }
+    return cnt;
+  }
+
+  public int canBeTypedWords2(String text, String brokenLetters) { // 4ms, beats 27.38%
     int cnt = 0;
     boolean[] broken = new boolean[26];
     for (int i = 0; i < brokenLetters.length(); i++) broken[brokenLetters.charAt(i) - 'a'] = true;
