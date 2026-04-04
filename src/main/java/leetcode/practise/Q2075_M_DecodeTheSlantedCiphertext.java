@@ -16,6 +16,27 @@ public class Q2075_M_DecodeTheSlantedCiphertext {
     System.out.println(q2075MDecodeTheSlantedCiphertext.decodeCiphertext("coding", 1));
   }
 
+  public String decodeCiphertext2(
+      String encodedText, int rows) { // 35ms, beats 31.95% -- thus delete char is slower than ss
+    if (encodedText.isEmpty()) return encodedText;
+    int cols = encodedText.length() / rows;
+    int i = 0, j = 0, starter = 0;
+    StringBuilder data = new StringBuilder();
+    do {
+      int idx = i * cols + j;
+      data.append(encodedText.charAt(idx));
+      i++;
+      j++;
+      if (i == rows || j == cols) {
+        j = ++starter;
+        i = 0;
+      }
+    } while (starter < cols);
+    int k;
+    for (k = data.length() - 1; k >= 0 && data.charAt(k) == ' '; k--) data.deleteCharAt(k);
+    return data.toString();
+  }
+
   public String decodeCiphertext(String encodedText, int rows) { // 25ms, beats 63.31%
     if (encodedText.isEmpty()) return encodedText;
     int cols = encodedText.length() / rows;
