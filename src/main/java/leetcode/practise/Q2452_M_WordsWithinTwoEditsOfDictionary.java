@@ -1,7 +1,6 @@
 package leetcode.practise;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -25,7 +24,7 @@ public class Q2452_M_WordsWithinTwoEditsOfDictionary {
 
   public List<String> twoEditWords(String[] queries, String[] dictionary) { // 6ms, beats 72.79%
     Set<String> dict = new HashSet<>();
-      Collections.addAll(dict, dictionary);
+    for (String diction : dictionary) dict.add(diction);
 
     List<String> data = new ArrayList<>();
     for (String query : queries) {
