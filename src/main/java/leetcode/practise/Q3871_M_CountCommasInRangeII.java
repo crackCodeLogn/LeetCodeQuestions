@@ -8,11 +8,11 @@ public class Q3871_M_CountCommasInRangeII {
   double sum = 0;
 
   public long countCommas(long n) { // 1ms, beats 99.36%
-    if (n == (long) Math.pow(10, 15)) return 3998998998999005L;
+    // if (n == (long) Math.pow(10, 15)) return 3998998998999005L;
 
     sum = 0;
     // int base = (int) Math.log10(n);
-    for (int i = 3, v = 1; i < 15; i += 3, v++) {
+    for (int i = 3, v = 1; i < 18; i += 3, v++) {
       compute(i, i + 3, n, v);
     }
 
